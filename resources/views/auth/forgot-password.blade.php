@@ -1,25 +1,23 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<x-layouts.guest>
+    <div class="mb-4 text-sm text-justify text-gray-600 dark:text-gray-400">
+        <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail cadastrado que enviaremos por e-mail um link de redefinição de senha, onde permitirá que você escolha uma nova senha de acesso.</p>
     </div>
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form method="POST" action="{{ route('password.email') }}" class="flex flex-col gap-3 py-2">
         @csrf
 
         <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <x-forms.input id='email' type="email" label='E-mail' placeholder="exemplo@lifemotion.com.br" value="{{old('email')}}" attribute="autofocus required"/>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
+        <x-buttons.btn-block-submit>Enviar email de recuperação</x-buttons.btn-block-submit>
+
+        <div class="flex items-center justify-between gap-3">
+            <x-buttons.btn-link-secondary route="{{ route('login') }}">Login</x-buttons.btn-link-secondary>
+            <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
         </div>
+        
     </form>
-</x-guest-layout>
+</x-layouts.guest>

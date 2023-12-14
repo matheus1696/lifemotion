@@ -1,41 +1,19 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<x-layouts.guest>
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="flex flex-col gap-3 py-2">
         @csrf
 
         <!-- Email Address -->
-        <div>
-            <x-forms.input id='email' type="email" label='E-mail' placeholder="exemplo@lifemotion.com.br" value="{{old('email')}}" attribute="autofocus required autocomplete='username'"/>
-        </div>
+        <x-forms.input id='email' type="email" label='E-mail' placeholder="exemplo@lifemotion.com.br" value="{{old('email')}}" attribute="autofocus required autocomplete='username'"/>
 
         <!-- Password -->
-        <div class="mt-4">
-            <x-forms.input id='password' type="password" label='Senha' attribute="required autocomplete='current-password'"/>
-        </div>
+        <x-forms.input id='password' type="password" label='Senha' placeholder="*********" attribute="required autocomplete='current-password'"/>
 
-        <div class="flex items-center justify-center my-4">
-            <!-- Remember Me -->
-            <div class="flex-1">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="text-indigo-600 border-gray-300 rounded shadow-sm dark:bg-gray-900 dark:border-gray-700 focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="text-sm text-gray-600 ms-2 dark:text-gray-400">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex-1">
-                @if (Route::has('password.request'))
-                    <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-            </div>
-        </div>
-        <div>
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+        <x-buttons.btn-block-submit>Login</x-buttons.btn-block-submit>
+        
+        <div class="flex items-center justify-between gap-3">
+            <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
+            <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
         </div>
     </form>
-</x-guest-layout>
+</x-layouts.guest>
