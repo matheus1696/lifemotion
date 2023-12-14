@@ -16,10 +16,10 @@
     </head>
     <body class="text-gray-900">
         <section class="flex min-h-screen">
-            <div class="flex items-center justify-center bg-gray-800 lg:flex-1 ">
+            <div class="items-center justify-center bg-gray-800 lg:flex-1 hidden lg:flex">
                 <img src="assets/img/logo.png" alt="Logo LifeMotion" class="w-80">
             </div>
-            <div class="flex flex-col items-center justify-center flex-1 bg-gray-100 dark:bg-gray-900">
+            <div class="flex flex-col items-center justify-center flex-1 bg-gray-100 dark:bg-gray-900 shadow-2xl">
                 <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md dark:bg-gray-800 sm:rounded-lg">
                     {{ $slot }}
                 </div>
