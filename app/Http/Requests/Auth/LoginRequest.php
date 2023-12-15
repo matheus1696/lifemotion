@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -39,16 +40,36 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
+        // Verifica se o usuário não está sujeito a limitação de taxa (rate limiting).
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        // Obtém as credenciais do formulário (email, senha e remember).
+        $credentials = $this->only('email', 'password');
+        $remember = $this->boolean('remember');
+
+        // Tenta autenticar o usuário usando as credenciais.
+        if (! Auth::attempt($credentials, $remember)) {
+            // Incrementa o contador de tentativas (rate limiting).
             RateLimiter::hit($this->throttleKey());
 
+            // Verifica se o usuário existe no banco de dados.
+            $userExists = User::where('email', $credentials['email'])->exists();
+
+            // Verifica se o usuário e a senha estão incorretos.
+            $invalidCredentials = ! $userExists ? 'email' : 'password';
+
+            // Define a mensagem de erro com base na verificação acima.
+            $errorMessage = $invalidCredentials === 'email'
+                ? trans('auth.failed')
+                : trans('auth.password');
+
+            // Lança uma exceção de validação com a mensagem personalizada.
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                $invalidCredentials => $errorMessage,
             ]);
         }
 
+        // Se a autenticação for bem-sucedida, limpa o contador de tentativas (rate limiting).
         RateLimiter::clear($this->throttleKey());
     }
 

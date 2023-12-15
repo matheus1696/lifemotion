@@ -15,12 +15,12 @@
     <body class="text-gray-900">
         <section class="flex min-h-screen">
             <!-- Logo -->
-            <div class="items-center justify-center hidden bg-gray-800 lg:flex-1 lg:flex">
+            <div class="items-center justify-center hidden lg:flex-1 lg:flex">
                 <img src="assets/img/logo.png" alt="Logo LifeMotion" class="w-80">
             </div>
 
             <!-- Slot -->
-            <div class="flex flex-col items-center justify-center flex-1 bg-gray-100 dark:bg-gray-900">
+            <div class="flex flex-col items-center justify-center flex-1 bg-teal-700 dark:bg-gray-900">
                 <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md dark:bg-gray-800 sm:rounded-lg">
                     {{ $slot }}
                 </div>
