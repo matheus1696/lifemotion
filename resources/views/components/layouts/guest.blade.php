@@ -20,7 +20,7 @@
             </div>
 
             <!-- Slot -->
-            <div class="flex flex-col items-center justify-center flex-1 bg-teal-700 dark:bg-gray-900">
+            <div class="flex flex-col items-center justify-center flex-1 bg-gradient-to-t from-indigo-500 to-teal-500 dark:bg-gray-900">
                 <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md dark:bg-gray-800 sm:rounded-lg">
                     {{ $slot }}
                 </div>
