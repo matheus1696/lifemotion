@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b class="text-teal-700">Life</b>Motion',
+    'logo' => '<b class="text-teal-500">Life</b>Motion',
     'logo_img' => 'assets/img/logo.png',
     'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
