@@ -17,9 +17,10 @@ class BodyWeightsFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            'weight' => rand(49.00,125.00),
-            'user_id' => rand(1,350),
+            'weight' => rand(60.00,110.00),
+            'user_id' => User::inRandomOrder()->first(),
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BodyMassIndicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+route::resource('bmi', BodyMassIndicesController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

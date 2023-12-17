@@ -18,7 +18,7 @@ class BodyHeightsFactory extends Factory
     public function definition(): array
     {
         return [
-            'height' => rand(150.00,205.00),
+            'height' => rand(160.00,180.00),
             'user_id' => User::factory(),
         ];
     }

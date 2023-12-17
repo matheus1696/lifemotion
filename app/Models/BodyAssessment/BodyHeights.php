@@ -11,7 +11,7 @@ class BodyHeights extends Model
 {
     use HasFactory;
 
-    protected $filleble = [
+    protected $fillable = [
         'height',
         'user_id',
     ];

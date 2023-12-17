@@ -13,6 +13,7 @@ class BodyHeightsSeeder extends Seeder
      */
     public function run(): void
     {
-        BodyHeights::factory(350)->create();
+        BodyHeights::factory(20)->create();
+        BodyHeights::create(['height'=>175,'user_id'=>1]);
     }
 }

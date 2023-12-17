@@ -302,11 +302,9 @@ return [
             'text' => 'Buscar Menu',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'dashboard',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'IMC',
+            'route'         => 'bmi.index',
+            'icon'        => 'fas fa-heartbeat',
         ],
         ['header' => 'account_settings'],
         [
@@ -527,5 +525,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

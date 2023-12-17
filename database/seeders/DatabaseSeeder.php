@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BodyHeightsSeeder::class,
             BodyWeightsSeeder::class,
+            BodyMassIndicesSeeder::class
         ]); 
 
 

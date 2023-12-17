@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\BodyAssessment\BodyHeights;
+use App\Models\BodyAssessment\BodyMassIndex;
 use App\Models\BodyAssessment\BodyWeights;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -47,11 +48,15 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function height(): HasMany{
+    public function Heights(): HasMany{
         return $this->hasMany(BodyHeights::class);
     }
 
-    public function weight(): HasMany{
+    public function Weights(): HasMany{
         return $this->hasMany(BodyWeights::class);
+    }
+
+    public function BMI(): HasMany{
+        return $this->hasMany(BodyMassIndex::class);
     }
 }

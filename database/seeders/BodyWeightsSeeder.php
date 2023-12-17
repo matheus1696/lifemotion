@@ -13,6 +13,6 @@ class BodyWeightsSeeder extends Seeder
      */
     public function run(): void
     {
-        BodyWeights::factory(750)->create();
+        BodyWeights::factory(50000)->create();
     }
 }
