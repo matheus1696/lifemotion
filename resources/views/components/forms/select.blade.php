@@ -1,10 +1,9 @@
-<div class="form-group col-lg-{{$col ?? "6"}}" style="font-size: 0.8em">
-    <label for="{{$id}}" class="col-form-label">{{$label ?? "Label"}}:</label>
+<div class="flex flex-col">
+    <label for="{{$id}}" class="px-2 py-1 text-sm font-semibold">{{$label ?? "Label"}}</label>
     <select
         name="{{$id}}"
         id="{{$id}}"
-        class="form-control @error($id) is-invalid border border-danger @enderror js-select"
-        style="width:100%"
+        class="px-2 py-2 text-sm rounded-md border @error($id) outline-red-500 border-red-300 @else outline-teal-500 border-gray-300 @enderror"
     >
         <option selected disabled>Selecione</option>
         {{$slot}}

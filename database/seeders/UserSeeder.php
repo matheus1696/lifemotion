@@ -24,5 +24,6 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123456'),
             'remember_token' => Str::random(10),
         ]);
+        User::factory(30)->create();
     }
 }

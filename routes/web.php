@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BodyMassIndicesController;
+use App\Http\Controllers\BodyMassIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-route::resource('bmi', BodyMassIndicesController::class);
+route::resource('bmi', BodyMassIndexController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

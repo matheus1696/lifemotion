@@ -15,9 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            BodyHeightsSeeder::class,
-            BodyWeightsSeeder::class,
-            BodyMassIndicesSeeder::class
+            BodyMassIndexSeeder::class
         ]); 
 
 
