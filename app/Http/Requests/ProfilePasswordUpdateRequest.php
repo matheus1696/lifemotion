@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreBodyMassIndexRequest extends FormRequest
+class ProfilePasswordUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,9 @@ class StoreBodyMassIndexRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'current_password'=>'required|current_password',
+            'password'=>'required|confirmed|min:',
+            'password_confirmation'=>'required',
         ];
     }
 }

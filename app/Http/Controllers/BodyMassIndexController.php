@@ -19,18 +19,21 @@ class BodyMassIndexController extends Controller
             ->with('user')
             ->orderBy('created_at', 'DESC')
             ->get();
-        
-        // Inicialize arrays para armazenar datas e valores BMI for ChartJS
-        $time = [];
-        $bmiDefault = [];
 
         // Percorra o histórico para extrair as datas e os valores BMI
-        foreach ($historical as $historic) {
-            array_unshift($time, $historic->created_at->format('d/m/y'));
-            array_unshift($bmiDefault, 24.9);
+        foreach ($historical as $key => $historic) {
+            $time[] = $historic->created_at->format('d/m/Y');
+            $weight[] = $historic->weight;
+            $bmi[] = $historic->bmi;
+            $bmiDefault[] = 24.9;
         }
 
-        return view('bodyAssessment.BodyMassIndex.index', compact('historical', 'time', 'bmiDefault'));
+        $graphic['time'] = $time;
+        $graphic['weight'] = $weight;
+        $graphic['bmi'] = $bmi;
+        $graphic['bmiDefault'] = $bmiDefault;
+
+        return view('bodyAssessment.BodyMassIndex.index', compact('historical', 'graphic'));
     }
 
     /**
@@ -46,7 +49,13 @@ class BodyMassIndexController extends Controller
      */
     public function store(StoreBodyMassIndexRequest $request)
     {
-        //
+        $bmi = $request['weight'] / ((($request['height'] / 100) * ($request['height'] / 100)));
+        $request['bmi'] = $bmi;
+        $request['user_id'] = Auth()->user()->id;
+
+        BodyMassIndex::create($request->all());
+
+        return redirect()->back();
     }
 
     /**

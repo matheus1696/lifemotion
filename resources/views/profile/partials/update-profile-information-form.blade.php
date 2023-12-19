@@ -7,7 +7,7 @@
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
-        @method('patch')
+        @method('put')
 
         <div>
             <x-forms.input id="name" label="Nome:" :value="old('name', $user->name)" attribute="required autofocus autocomplete='name'" />
@@ -24,8 +24,8 @@
     
             <div class="col-lg-6 col-12">
                 <x-forms.select id="sex" label="Sexo:" :value="old('sex', $user->sex)">
-                    <option value="Masculino">Masculino</option>                    
-                    <option value="Feminino">Feminino</option>
+                    <option @if ($user->sex === "M") selected @endif value="M">Masculino</option>                    
+                    <option @if ($user->sex === "F") selected @endif value="F">Feminino</option>
                 </x-forms.select>
             </div>
         </div>

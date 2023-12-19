@@ -10,15 +10,15 @@
         @method('put')
 
         <div>
-            <x-forms.input id="current_password" label="Senha Antiga:" :value="old('current_password')" attribute="autocomplete='current-password'" />
+            <x-forms.input type="password" id="current_password" label="Senha Atual:" placeholder="********" attribute="autocomplete='current-password'" />
         </div>
 
         <div>
-            <x-forms.input id="password" label="Senha Antiga:" :value="old('password')" attribute="autocomplete='password'" />
+            <x-forms.input type="password" id="password" label="Nova Senha:" placeholder="********" attribute="autocomplete='password'" />
         </div>
 
         <div>
-            <x-forms.input id="password_confirmation" label="Confirma Senha:" :value="old('password_confirmation')" attribute="autocomplete='new-password'" />
+            <x-forms.input type="password" id="password_confirmation" label="Confirma Nova Senha:" placeholder="********" attribute="autocomplete='new-password'" />
         </div>
 
         <div>

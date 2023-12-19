@@ -4,27 +4,20 @@
 
 @section('content')
 
-    <section class="py-3">
-        <div class="mt-3 bg-white rounded row">
-            <div class="col-lg-6 col-12">
+    <section class="px-3 py-5">
+        <div class="flex flex-col gap-5 lg:flex-row">
+            <div class="flex-1 bg-white rounded-md">
                 <div class="p-4">
                     <div>
                         @include('profile.partials.update-profile-information-form')
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-12">
+            <div class="flex-1 bg-white rounded-md">
                 <div class="p-4">
                     <div>
                         @include('profile.partials.update-password-form')
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-3 bg-white rounded row">
-            <div class="col-lg-6 col-12">
-                <div class="p-4">
-                    @include('profile.partials.delete-user-form')
                 </div>
             </div>
         </div>
