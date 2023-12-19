@@ -16,4 +16,5 @@
             <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
         </div>
     </form>
+    
 </x-layouts.guest>

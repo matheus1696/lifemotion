@@ -14,24 +14,32 @@ class BodyMassIndexController extends Controller
     public function index(BodyMassIndex $bodyMassIndex)
     {
 
+        $graphic['create'] = true;
         $historical = $bodyMassIndex
             ->where('user_id', Auth()->user()->id)
             ->with('user')
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        // Percorra o histórico para extrair as datas e os valores BMI
-        foreach ($historical as $key => $historic) {
-            $time[] = $historic->created_at->format('d/m/Y');
-            $weight[] = $historic->weight;
-            $bmi[] = $historic->bmi;
-            $bmiDefault[] = 24.9;
-        }
+        if ($historical->count() > 1) {
+            // Percorra o histórico para extrair as datas e os valores BMI
+            foreach ($historical as $key => $historic) {
+                $time[] = $historic->created_at->format('d/m/Y');
+                $weight[] = $historic->weight;
+                $bmi[] = $historic->bmi;
+                $bmiDefault[] = 24.9;
+            }            
 
-        $graphic['time'] = $time;
-        $graphic['weight'] = $weight;
-        $graphic['bmi'] = $bmi;
-        $graphic['bmiDefault'] = $bmiDefault;
+            $graphic['time'] = array_reverse($time);
+            $graphic['weight'] = array_reverse($weight);
+            $graphic['bmi'] = array_reverse($bmi);
+            $graphic['bmiDefault'] = array_reverse($bmiDefault);
+        } else {
+            $graphic['time'] = 0;
+            $graphic['weight'] = 0;
+            $graphic['bmi'] = 0;
+            $graphic['bmiDefault'] = 0;
+        }
 
         return view('bodyAssessment.BodyMassIndex.index', compact('historical', 'graphic'));
     }

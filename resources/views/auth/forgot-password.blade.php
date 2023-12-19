@@ -3,9 +3,6 @@
         <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail cadastrado que enviaremos por e-mail um link de redefinição de senha, onde permitirá que você escolha uma nova senha de acesso.</p>
     </div>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
     <form method="POST" action="{{ route('password.email') }}" class="flex flex-col gap-3 py-2">
         @csrf
 
