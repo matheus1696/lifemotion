@@ -22,7 +22,16 @@ class StoreBodyMassIndexRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'height'=>'required|integer',
+            'weight'=>'required|decimal:0,2'
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'height'=>'altura',
+            'weight'=>'peso'
         ];
     }
 }

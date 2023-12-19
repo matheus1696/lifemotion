@@ -20,9 +20,15 @@
           <div class=""></div>
         </div>
       </div>
-      <canvas id="chartWeight"
+      @if ($graphic['weight'] == 0)
+          <div class="flex items-center justify-center w-full h-full">
+            <h2>Necessitamos de dois cadastros de medidas</h2>
+          </div>
+      @else
+        <canvas id="chartBMI"
         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 324px;"
         width="648" height="500" class="chartjs-render-monitor"></canvas>
+      @endif
     </div>
   </div>
 </div>
