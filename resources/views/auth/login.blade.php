@@ -1,6 +1,12 @@
 <x-layouts.guest>
 
-    <form method="POST" action="{{ route('login') }}" class="flex flex-col gap-3 py-2">
+    <div class="lg:hidden">
+        <div class="flex items-center justify-center">
+            <img src="assets/img/logo.png" alt="Logo LifeMotion" width="100">
+        </div>
+    </div>
+
+    <form method="POST" action="{{ route('login') }}" class="flex flex-col py-2">
         @csrf
 
         <!-- Email Address -->
@@ -11,7 +17,7 @@
 
         <x-buttons.btn-block-submit>Login</x-buttons.btn-block-submit>
         
-        <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center justify-between gap-3 mt-3">
             <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
             <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
         </div>

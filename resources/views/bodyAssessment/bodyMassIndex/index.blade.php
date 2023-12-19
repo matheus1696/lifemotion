@@ -10,7 +10,7 @@
 
   <section class="row">
 
-    <div class="col-md-9 col-12">
+    <div class="col-lg-9 col-md-8 col-12">
       <div class="p-3 mb-3 bg-white rounded-md">
         <h4 class="py-3 text-lg">Cadastro de Medidas</h4>
         <div>
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="col-md-3 col-12">
+    <div class="col-lg-3 col-md-4 col-12">
       <div class="p-3 bg-white rounded-md">
         <h4 class="py-3 text-lg">Histórico</h4>
         <div class="overflow-auto" style="max-height: 70vh">
@@ -51,9 +51,11 @@
               </div>
             </div>
             <div class="card-body" style="display: none;">
-              <div><strong>IMC:</strong> {{$historic->bmi}}</div>
-              <div><strong>Altura:</strong> {{$historic->height}}</div>
-              <div><strong>Peso:</strong> {{$historic->weight}}</div>
+              <div class="flex items-center justify-center gap-2 text-sm">
+                <div><strong>IMC:</strong> {{$historic->bmi}}</div>
+                <div><strong>Altura:</strong> {{$historic->height}}cm</div>
+                <div><strong>Peso:</strong> {{$historic->weight}}kg</div>
+              </div>
             </div>
           </div>
           @endforeach
