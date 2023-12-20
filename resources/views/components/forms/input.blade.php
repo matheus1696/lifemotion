@@ -1,4 +1,4 @@
-<div class="flex flex-col">
+<div class="flex flex-col w-full mb-3">
     <label for="{{$id}}" class="px-2 py-1 text-sm font-semibold">{{$label ?? "Label"}}</label>
     <input
         type="{{$type ?? "text"}}"
@@ -17,7 +17,5 @@
     >
     @error($id)
         <span class="px-2 py-1 text-sm font-semibold text-red-500">{{ $message }}</span>
-    @else
-        <span class="px-2 py-1 text-sm font-semibold text-transparent text-red-500 bg-transparent ">Erro</span>
     @enderror
 </div>

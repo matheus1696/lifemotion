@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-route::resource('bmi', BodyMassIndexController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/Auth/auth.php';
+
+Route::middleware('auth')->group(function () {
+    Route::resource('bmi', BodyMassIndexController::class);
+});

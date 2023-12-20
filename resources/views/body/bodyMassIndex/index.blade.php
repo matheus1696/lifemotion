@@ -3,28 +3,28 @@
 @section('title', 'IMC')
 
 @section('content_header')
-  <h1 class="text-center">Indice de Massa Corporal - IMC</h1>
+  <h1 class="py-3 text-center">Indice de Massa Corporal - IMC</h1>
 @stop
 
 @section('content')
 
   <section class="row">
 
-    <div class="col-lg-9 col-md-8 col-12">
-      <div class="p-3 bg-white rounded-md">
+    <div class="mb-3 col-lg-9 col-md-8 col-12">
+      <div class="p-4 mb-3 bg-white rounded-md shadow-lg">
+        <h4 class="text-lg">Cadastro de Medidas</h4>        
+        @include('body.bodyMassIndex.partials.form_create')
+      </div>
+      
+      <div class="p-4 bg-white rounded-md shadow-lg">
         <h4 class="text-lg">Gráficos</h4>
           @include('body.bodyMassIndex.partials.graphic_bmi')
           @include('body.bodyMassIndex.partials.graphic_weight')
       </div>
-
-      <div class="p-3 mt-3 bg-white rounded-md">
-        <h4 class="text-lg">Cadastro de Medidas</h4>        
-        @include('body.bodyMassIndex.partials.form_create')
-      </div>
     </div>
 
-    <div class="col-lg-3 col-md-4 col-12">
-      <div class="p-3 bg-white rounded-md">
+    <div class="mb-3 col-lg-3 col-md-4 col-12">
+      <div class="p-4 bg-white rounded-md shadow-lg">
         <h4 class="text-lg">Histórico</h4>
         <div class="overflow-auto" style="max-height: 70vh">
           @foreach ($historical as $historic)
@@ -41,9 +41,6 @@
                 <div><strong>IMC:</strong> {{$historic->bmi}}</div>
                 <div><strong>Altura:</strong> {{$historic->height}}cm</div>
                 <div><strong>Peso:</strong> {{$historic->weight}}kg</div>
-              </div>
-              <div class="flex items-center justify-center gap-2 text-sm">
-                
               </div>
             </div>
           </div>

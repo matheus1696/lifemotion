@@ -16,7 +16,7 @@
 
         <x-buttons.btn-block-submit>Registrar</x-buttons.btn-block-submit>
     
-        <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center justify-between gap-3 mt-3">
             <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
             <x-buttons.btn-link-tertiary route="{{ route('login') }}">Login</x-buttons.btn-link-tertiary>
         </div>
