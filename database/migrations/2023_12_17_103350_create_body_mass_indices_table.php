@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('body_mass_indices', function (Blueprint $table) {
             $table->id();
+            $table->datetime('date');
             $table->integer('height');
             $table->decimal('weight',5,2);
             $table->decimal('bmi',4,2);

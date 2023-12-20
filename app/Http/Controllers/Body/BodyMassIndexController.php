@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Body;
 
-use App\Models\BodyAssessment\BodyMassIndex;
+use App\Http\Controllers\Controller;
+use App\Models\Body\BodyMassIndex;
 use App\Http\Requests\StoreBodyMassIndexRequest;
 use App\Http\Requests\UpdateBodyMassIndexRequest;
+use Carbon\Carbon;
 
 class BodyMassIndexController extends Controller
 {
@@ -13,35 +15,39 @@ class BodyMassIndexController extends Controller
      */
     public function index(BodyMassIndex $bodyMassIndex)
     {
-
+        //Criação Variável para ChartJS
         $graphic['create'] = true;
+
+        //Histórico de Cadastros realizados
         $historical = $bodyMassIndex
             ->where('user_id', Auth()->user()->id)
             ->with('user')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('date', 'DESC')
             ->get();
 
-        if ($historical->count() > 1) {
+        
+        if ($historical->isEmpty()) {
+            //Atribuindo Valor quando Null
+            $graphic['time'] = $graphic['weight'] = $graphic['height'] = $graphic['bmi'] = $graphic['bmiDefault'] = [];
+        }else{
             // Percorra o histórico para extrair as datas e os valores BMI
             foreach ($historical as $key => $historic) {
-                $time[] = $historic->created_at->format('d/m/Y');
+                $time[] = (new Carbon($historic->date))->format('d/m/Y');;
                 $weight[] = $historic->weight;
+                $height[] = $historic->height;
                 $bmi[] = $historic->bmi;
                 $bmiDefault[] = 24.9;
             }            
 
+            //Alterando a Ordem do Array para Apresentação no ChartJS
             $graphic['time'] = array_reverse($time);
             $graphic['weight'] = array_reverse($weight);
+            $graphic['height'] = array_reverse($height);
             $graphic['bmi'] = array_reverse($bmi);
             $graphic['bmiDefault'] = array_reverse($bmiDefault);
-        } else {
-            $graphic['time'] = 0;
-            $graphic['weight'] = 0;
-            $graphic['bmi'] = 0;
-            $graphic['bmiDefault'] = 0;
         }
 
-        return view('bodyAssessment.BodyMassIndex.index', compact('historical', 'graphic'));
+        return view('body.BodyMassIndex.index', compact('historical', 'graphic'));
     }
 
     /**
@@ -57,10 +63,13 @@ class BodyMassIndexController extends Controller
      */
     public function store(StoreBodyMassIndexRequest $request)
     {
-        $bmi = $request['weight'] / ((($request['height'] / 100) * ($request['height'] / 100)));
-        $request['bmi'] = $bmi;
+        //Calculo Indice de Gordura Corporal
+        $request['bmi'] = $request['weight'] / ((($request['height'] / 100) * ($request['height'] / 100)));
+
+        //Atribuindo Usuário Logado
         $request['user_id'] = Auth()->user()->id;
 
+        //Cadastrando dados
         BodyMassIndex::create($request->all());
 
         return redirect()->back();

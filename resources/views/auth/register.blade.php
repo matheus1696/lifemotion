@@ -1,5 +1,5 @@
 <x-layouts.guest>
-    <form method="POST" action="{{ route('register') }}" class="flex flex-col gap-3 py-2">
+    <form method="POST" action="{{ route('register') }}" class="flex flex-col py-2">
         @csrf
 
         <!-- Name -->

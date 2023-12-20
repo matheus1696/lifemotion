@@ -1,12 +1,12 @@
 <?php
 
-namespace Database\Factories\BodyAssessment;
+namespace Database\Factories\Body;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BodyAssessment\Body_Mass_Index>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Body\BodyMassIndex>
  */
 class BodyMassIndexFactory extends Factory
 {
@@ -29,7 +29,7 @@ class BodyMassIndexFactory extends Factory
             'weight' => $weight,
             'height' => $height,
             'user_id' => rand(1,$userCount),
-            'created_at' => now()
+            'date' => now()
                 ->subYears(rand(1, 5)) // Intervalo de 1 a 5 anos
                 ->subMonths(rand(0, 11)) // Intervalo de 0 a 11 meses
                 ->subDays(rand(0, 30)), // Intervalo de 0 a 30 dias

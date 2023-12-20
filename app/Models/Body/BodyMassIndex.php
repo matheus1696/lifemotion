@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\BodyAssessment;
+namespace App\Models\Body;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +12,7 @@ class BodyMassIndex extends Model
     use HasFactory;
 
     protected $fillable = [
+        'date',
         'height',
         'weight',
         'bmi',

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\BodyAssessment\BodyMassIndex;
+use App\Models\Body\BodyMassIndex;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
