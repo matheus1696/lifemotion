@@ -1,4 +1,6 @@
-<x-layouts.guest>
+@extends('layouts.guest')
+
+@section('content')
     <form method="POST" action="{{ route('register') }}" class="flex flex-col py-2">
         @csrf
 
@@ -15,10 +17,10 @@
         <x-forms.input id='password_confirmation' type="password" label='Confirmar Senha' placeholder="********" attribute="required"/>
 
         <x-buttons.btn-block-submit>Registrar</x-buttons.btn-block-submit>
-    
+
         <div class="flex items-center justify-between gap-3 mt-3">
             <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
             <x-buttons.btn-link-tertiary route="{{ route('login') }}">Login</x-buttons.btn-link-tertiary>
         </div>
     </form>
-</x-layouts.guest>
+@endsection

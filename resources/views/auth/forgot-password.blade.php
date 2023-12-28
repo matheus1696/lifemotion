@@ -1,4 +1,6 @@
-<x-layouts.guest>
+@extends('layouts.guest')
+
+@section('content')
     <div class="mb-4 text-sm text-justify text-gray-600 dark:text-gray-400">
         <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail cadastrado que enviaremos por e-mail um link de redefinição de senha, onde permitirá que você escolha uma nova senha de acesso.</p>
     </div>
@@ -17,4 +19,4 @@
         </div>
         
     </form>
-</x-layouts.guest>
+@endsection

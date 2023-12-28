@@ -1,11 +1,6 @@
-<x-layouts.guest>
+@extends('layouts.guest')
 
-    <div class="lg:hidden">
-        <div class="flex items-center justify-center">
-            <img src="assets/img/logo.png" alt="Logo LifeMotion" width="100">
-        </div>
-    </div>
-
+@section('content')
     <form method="POST" action="{{ route('login') }}" class="flex flex-col py-2">
         @csrf
 
@@ -22,5 +17,4 @@
             <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
         </div>
     </form>
-    
-</x-layouts.guest>
+@endsection
