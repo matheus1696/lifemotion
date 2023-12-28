@@ -16,11 +16,11 @@
         <!-- Confirm Password -->
         <x-forms.input id='password_confirmation' type="password" label='Confirmar Senha' placeholder="********" attribute="required"/>
 
-        <x-buttons.btn-block-submit>Registrar</x-buttons.btn-block-submit>
+        <x-buttons.auth.btn-register />
 
         <div class="flex items-center justify-between gap-3 mt-3">
-            <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
-            <x-buttons.btn-link-tertiary route="{{ route('login') }}">Login</x-buttons.btn-link-tertiary>
+            <x-buttons.auth.btn-forgot route="{{ route('password.request') }}" />
+            <x-buttons.auth.btn-login route="{{ route('login') }}" />
         </div>
     </form>
 @endsection

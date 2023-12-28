@@ -1,9 +1,9 @@
-<div class="form-group col-12" style="font-size: 0.9em">
-    <label for="{{$id}}" class="col-form-label">{{$label ?? "Label"}}</label>
+<div class="flex flex-col mb-4">
+    <label for="{{$id}}" class="px-2 py-1 text-sm font-semibold">{{$label ?? "Label"}}</label>
     <textarea
         name="{{$id}}"
         id="{{$id}}"
-        class="form-control summernote @error($id) is-invalid border border-danger @enderror"
+        class="px-2 py-2 text-sm rounded-md border @error($id) outline-red-500 border-red-300 @else outline-teal-500 border-gray-300 @enderror"
         rows="{{$rows ?? 4}}"
     >@if(empty($value)){{old($id)}}@else{!!$value!!}@endif</textarea>
 

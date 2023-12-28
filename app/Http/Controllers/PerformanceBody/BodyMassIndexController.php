@@ -47,7 +47,7 @@ class BodyMassIndexController extends Controller
             $graphic['bmiDefault'] = array_reverse($bmiDefault);
         }
 
-        return view('performanceBody.bodyMassIndex.index', compact('historical', 'graphic'));
+        return view('performance-body.body-mass-index.index', compact('historical', 'graphic'));
     }
 
     /**

@@ -12,9 +12,9 @@
         <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://kit.fontawesome.com/04fdd6b99f.js" crossorigin="anonymous"></script>
     </head>
-    <body class="text-gray-900">
+    <body>
         <section class="flex min-h-screen">
-            <!-- Logo -->
+            <!-- Logo Large Screen -->
             <div class="items-center justify-center hidden lg:flex-1 lg:flex">
                 <img src="assets/img/logo.png" alt="Logo LifeMotion" class="w-80">
             </div>
@@ -23,6 +23,7 @@
             <div class="flex flex-col items-center justify-center flex-1 px-5 sm:px-0 bg-gradient-to-t from-indigo-500 to-teal-500">
                 <div class="w-full px-6 py-4 overflow-hidden bg-white shadow-md rounded-xl sm:max-w-md">
                     
+                    <!-- Logo Small Screen -->
                     <div class="lg:hidden">
                         <div class="flex items-center justify-center">
                             <img src="assets/img/logo.png" alt="Logo LifeMotion" width="100">

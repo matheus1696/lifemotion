@@ -11,11 +11,11 @@
         <!-- Email Address -->
         <x-forms.input id='email' type="email" label='E-mail' placeholder="exemplo@lifemotion.com.br" value="{{old('email')}}" attribute="autofocus required"/>
 
-        <x-buttons.btn-block-submit>Enviar email de recuperação</x-buttons.btn-block-submit>
+        <x-buttons.auth.btn-forgot />
 
         <div class="flex items-center justify-between gap-3">
-            <x-buttons.btn-link-secondary route="{{ route('login') }}">Login</x-buttons.btn-link-secondary>
-            <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
+            <x-buttons.auth.btn-login route="{{ route('login') }}" />
+            <x-buttons.auth.btn-register route="{{ route('register') }}" />
         </div>
         
     </form>

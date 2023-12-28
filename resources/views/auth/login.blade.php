@@ -10,11 +10,11 @@
         <!-- Password -->
         <x-forms.input id='password' type="password" label='Senha' placeholder="*********" attribute="required autocomplete='current-password'"/>
 
-        <x-buttons.btn-block-submit>Login</x-buttons.btn-block-submit>
+        <x-buttons.auth.btn-login />
         
         <div class="flex items-center justify-between gap-3 mt-3">
-            <x-buttons.btn-link-secondary route="{{ route('password.request') }}">Esqueceu a senha?</x-buttons.btn-link-secondary>
-            <x-buttons.btn-link-tertiary route="{{ route('register') }}">Cadastre-se</x-buttons.btn-link-tertiary>
+            <x-buttons.auth.btn-forgot route="{{ route('password.request') }}" />
+            <x-buttons.auth.btn-register route="{{ route('register') }}" />
         </div>
     </form>
 @endsection

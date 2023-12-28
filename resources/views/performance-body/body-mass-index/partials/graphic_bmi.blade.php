@@ -1,6 +1,6 @@
 <div class="card card-indigo">
   <div class="card-header">
-    <h3 class="card-title">Historico IMC</h3>
+    <h3 class="card-title">Historico Peso</h3>
     <div class="card-tools">
       <button type="button" class="btn btn-tool" data-card-widget="collapse">
         <i class="fas fa-minus"></i>
@@ -20,12 +20,11 @@
           <div class=""></div>
         </div>
       </div>
-        <canvas id="chartBMI"
-        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 324px;"
-        width="648" height="500" class="chartjs-render-monitor"></canvas>
+        <canvas id="chartBMI" class="px-3 py-2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 324px;" class="chartjs-render-monitor"></canvas>
     </div>
   </div>
 </div>
+
 
 <script>
   const chartBMI = document.getElementById('chartBMI');
