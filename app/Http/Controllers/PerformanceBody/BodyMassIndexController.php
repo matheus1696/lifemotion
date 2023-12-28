@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Body;
+namespace App\Http\Controllers\PerformanceBody;
 
 use App\Http\Controllers\Controller;
-use App\Models\Body\BodyMassIndex;
+use App\Models\PerformanceBody\BodyMassIndex;
 use App\Http\Requests\StoreBodyMassIndexRequest;
 use App\Http\Requests\UpdateBodyMassIndexRequest;
 use Carbon\Carbon;
@@ -47,7 +47,7 @@ class BodyMassIndexController extends Controller
             $graphic['bmiDefault'] = array_reverse($bmiDefault);
         }
 
-        return view('body.BodyMassIndex.index', compact('historical', 'graphic'));
+        return view('performanceBody.bodyMassIndex.index', compact('historical', 'graphic'));
     }
 
     /**

@@ -10,20 +10,20 @@
 
   <section class="row">
 
-    <div class="mb-3 col-lg-9 col-md-8 col-12">
+    <div class="mb-3 col-xl-9 col-md-8 col-12">
       <div class="p-4 mb-3 bg-white rounded-md shadow-lg">
         <h4 class="text-lg">Cadastro de Medidas</h4>        
-        @include('body.bodyMassIndex.partials.form_create')
+        @include('performanceBody.bodyMassIndex.partials.form_create')
       </div>
       
       <div class="p-4 bg-white rounded-md shadow-lg">
         <h4 class="text-lg">Gráficos</h4>
-          @include('body.bodyMassIndex.partials.graphic_bmi')
-          @include('body.bodyMassIndex.partials.graphic_weight')
+          @include('performanceBody.bodyMassIndex.partials.graphic_bmi')
+          @include('performanceBody.bodyMassIndex.partials.graphic_weight')
       </div>
     </div>
 
-    <div class="mb-3 col-lg-3 col-md-4 col-12">
+    <div class="mb-3 col-xl-3 col-md-4 col-12">
       <div class="p-4 bg-white rounded-md shadow-lg">
         <h4 class="text-lg">Histórico</h4>
         <div class="overflow-auto" style="max-height: 70vh">

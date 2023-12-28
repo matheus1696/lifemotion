@@ -1,4 +1,4 @@
-<div class="flex flex-col">
+<div class="flex flex-col mb-4">
     <label for="{{$id}}" class="px-2 py-1 text-sm font-semibold">{{$label ?? "Label"}}</label>
     <select
         name="{{$id}}"

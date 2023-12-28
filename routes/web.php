@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Body\BodyMassIndexController;
+use App\Http\Controllers\PerformanceBody\BodyMassIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*

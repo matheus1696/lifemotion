@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\BodyAssessment\BodyMassIndices;
+use App\Models\PerformanceBody\BodyMassIndex;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class BodyMassIndicesPolicy
+class BodyMassIndexPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class BodyMassIndicesPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, BodyMassIndices $BodyMassIndices): bool
+    public function view(User $user, BodyMassIndex $BodyMassIndex): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class BodyMassIndicesPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, BodyMassIndices $BodyMassIndices): bool
+    public function update(User $user, BodyMassIndex $BodyMassIndex): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class BodyMassIndicesPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, BodyMassIndices $BodyMassIndices): bool
+    public function delete(User $user, BodyMassIndex $BodyMassIndex): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class BodyMassIndicesPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, BodyMassIndices $BodyMassIndices): bool
+    public function restore(User $user, BodyMassIndex $BodyMassIndex): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class BodyMassIndicesPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, BodyMassIndices $BodyMassIndices): bool
+    public function forceDelete(User $user, BodyMassIndex $BodyMassIndex): bool
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Body;
+namespace App\Models\PerformanceBody;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
