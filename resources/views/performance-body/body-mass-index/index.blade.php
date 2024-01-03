@@ -3,25 +3,28 @@
 @section('title', 'IMC')
 
 @section('content_header')
-  <h1 class="py-3 text-center">Indice de Massa Corporal - IMC</h1>
+  <x-titles.content-header title="Indice de Massa Corporal - IMC"/>
 @stop
 
 @section('content')
   <section class="grid grid-cols-1 gap-4 my-3 lg:grid-cols-12">
     <div class="col-span-1 lg:col-span-7 xl:col-span-9">
-
+      
+      <!-- Measurement Registration Form -->
       <x-card title="Cadastro de Medidas">        
         @include('performance-body.body-mass-index.partials.create-bmi')
       </x-card>
       
+      <!-- Graphics -->
       <x-card title="Gráficos">
         @include('performance-body.body-mass-index.partials.graphic-bmi')
         @include('performance-body.body-mass-index.partials.graphic-weight')
-      </x-card>
-      
+      </x-card>      
     </div>
 
     <div class="col-span-1 lg:col-span-5 xl:col-span-3">
+
+      <!-- Registration History -->
       <x-card title="Histórico">
         @include('performance-body.body-mass-index.partials.historic')
       </x-card>
