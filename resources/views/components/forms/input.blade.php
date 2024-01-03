@@ -1,5 +1,5 @@
-<div class="flex flex-col w-full mb-3">
-    <label for="{{$id}}" class="p-1 text-sm font-semibold">{{$label ?? "Label"}}</label>
+<x-forms.input-group>
+    <x-forms.label id="{{$id}}" label={{$label}} />
     <input
         type="{{$type ?? "text"}}"
         name="{{$id}}"
@@ -16,6 +16,6 @@
         {{$attribute ?? ""}}
     >
     @error($id)
-        <span class="px-2 py-1 text-xs font-semibold text-red-500">{{ $message }}</span>
+        <x-forms.errors>{{$message}}</x-forms.errors>
     @enderror
-</div>
+</x-forms.input-group>
