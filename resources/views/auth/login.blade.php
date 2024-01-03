@@ -5,10 +5,10 @@
         @csrf
 
         <!-- Email Address -->
-        <x-forms.input id='email' type="email" label='E-mail' placeholder="exemplo@lifemotion.com.br" value="{{old('email')}}" attribute="autofocus required autocomplete='username'"/>
+        <x-forms.input id='email' type="email" label='E-mail' value="{{old('email')}}" attribute="autofocus required autocomplete='username'"/>
 
         <!-- Password -->
-        <x-forms.input id='password' type="password" label='Senha' placeholder="*********" attribute="required autocomplete='current-password'"/>
+        <x-forms.input id='password' type="password" label='Senha'  attribute="required autocomplete='current-password'"/>
 
         <x-buttons.auth.btn-login />
         

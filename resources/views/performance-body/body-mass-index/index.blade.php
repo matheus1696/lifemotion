@@ -7,45 +7,24 @@
 @stop
 
 @section('content')
+  <section class="grid grid-cols-1 gap-4 my-3 lg:grid-cols-12">
+    <div class="col-span-1 lg:col-span-7 xl:col-span-9">
 
-  <section class="row">
-    <div class="mb-3 col-xl-9 col-md-8 col-12">
-      <div class="p-4 mb-3 bg-white rounded-md shadow-lg">
-        <h4 class="text-lg">Cadastro de Medidas</h4>        
-        @include('performance-body.body-mass-index.partials.form_create')
-      </div>
+      <x-card title="Cadastro de Medidas">        
+        @include('performance-body.body-mass-index.partials.create-bmi')
+      </x-card>
       
-      <div class="p-4 bg-white rounded-md shadow-lg">
-        <h4 class="text-lg">Gráficos</h4>
-          @include('performance-body.body-mass-index.partials.graphic_bmi')
-          @include('performance-body.body-mass-index.partials.graphic_weight')
-      </div>
+      <x-card title="Gráficos">
+        @include('performance-body.body-mass-index.partials.graphic-bmi')
+        @include('performance-body.body-mass-index.partials.graphic-weight')
+      </x-card>
+      
     </div>
 
-    <div class="mb-3 col-xl-3 col-md-4 col-12">
-      <div class="p-4 bg-white rounded-md shadow-lg">
-        <h4 class="text-lg">Histórico</h4>
-        <div class="overflow-auto" style="max-height: 70vh">
-          @foreach ($historical as $historic)
-          <div class="card card-teal collapsed-card">
-            <div class="card-header">
-              <h3 class="text-sm font-weight-bold card-title">{{(new DateTime($historic->date))->format('d/m/Y');}}</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body" style="display: none;">
-              <div class="flex items-center justify-center gap-2 text-sm">
-                <div><strong>IMC:</strong> {{$historic->bmi}}</div>
-                <div><strong>Altura:</strong> {{$historic->height}}cm</div>
-                <div><strong>Peso:</strong> {{$historic->weight}}kg</div>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
-      </div>
+    <div class="col-span-1 lg:col-span-5 xl:col-span-3">
+      <x-card title="Histórico">
+        @include('performance-body.body-mass-index.partials.historic')
+      </x-card>
     </div>
 
   </section>
@@ -54,7 +33,8 @@
 @section('css')
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="//unpkg.com/alpinejs" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://kit.fontawesome.com/04fdd6b99f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @stop
 
