@@ -17,8 +17,9 @@
       
       <!-- Graphics -->
       <x-card title="Gráficos">
-        @include('performance-body.body-mass-index.partials.graphic-bmi')
+        @include('performance-body.body-mass-index.partials.graphic-height')
         @include('performance-body.body-mass-index.partials.graphic-weight')
+        @include('performance-body.body-mass-index.partials.graphic-bmi')
       </x-card>      
     </div>
 

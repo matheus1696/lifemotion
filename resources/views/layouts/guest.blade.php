@@ -16,7 +16,7 @@
 
             <!-- Logo Large Screen -->
             <div class="items-center justify-center hidden lg:flex-1 lg:flex">
-                <img src="assets/img/logo.png" alt="Logo LifeMotion" class="w-80">
+                <img src="assets/img/logo.png" alt="Logo LifeMotion" class="w-72">
             </div>
 
             <div class="flex flex-col items-center justify-center flex-1 px-5 sm:px-0 bg-gradient-to-t from-indigo-500 to-teal-500">

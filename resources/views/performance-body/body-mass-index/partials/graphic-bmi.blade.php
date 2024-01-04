@@ -1,4 +1,4 @@
-<x-accordion title="Histórico de IMC" open="true">
+<x-accordion title="Histórico de IMC">
   <canvas id="chartBMI" class="px-3 py-2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 324px;" class="chartjs-render-monitor"></canvas>
 </x-accordion>
 

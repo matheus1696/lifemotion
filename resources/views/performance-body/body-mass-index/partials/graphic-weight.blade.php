@@ -1,4 +1,4 @@
-<x-accordion title="Histórico de Peso" open="true">
+<x-accordion title="Histórico de Peso">
   <canvas id="chartWeight" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 324px;" width="648" height="500" class="chartjs-render-monitor"></canvas>
 </x-accordion>
 
