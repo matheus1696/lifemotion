@@ -63,9 +63,9 @@ return [
     |
     */
 
-    'logo' => '<b class="text-teal">Life</b>Motion',
-    'logo_img' => 'assets/img/logo.png',
-    'logo_img_class' => 'brand-image text-center m-auto',
+    'logo' => '<h1><span class="text-teal">Life</span>Motion</h1>',
+    'logo_img' => 'assets/img/logo-min-branca.png',
+    'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'LifeMotion Logo',
@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-teal elevation-4',
+    'classes_sidebar' => 'sidebar-dark-teal elevation-5',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
