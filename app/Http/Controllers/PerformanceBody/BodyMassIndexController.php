@@ -24,7 +24,6 @@ class BodyMassIndexController extends Controller
             ->with('user')
             ->orderBy('date', 'DESC')
             ->get();
-
         
         if ($historical->isEmpty()) {
             //Atribuindo Valor quando Null
