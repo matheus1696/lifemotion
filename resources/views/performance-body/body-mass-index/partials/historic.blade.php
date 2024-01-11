@@ -1,4 +1,4 @@
-<div class="overflow-auto" style="max-height: 70vh">
+<div class="overflow-auto vh-historic">
     @foreach ($historical as $historic)
         <x-accordion title="{{(new DateTime($historic->date))->format('d/m/Y');}}" background="bg-teal-500">
             <div class="flex items-center justify-center gap-2 text-sm">

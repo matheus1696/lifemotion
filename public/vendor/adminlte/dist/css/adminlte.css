@@ -8266,6 +8266,10 @@ button.bg-dark:focus {
   min-height: 100vh !important;
 }
 
+.vh-historic{
+  max-height: calc(100vh - 160px);
+}
+
 .vw-100 {
   width: 100vw !important;
 }
